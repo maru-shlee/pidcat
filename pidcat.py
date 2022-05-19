@@ -52,7 +52,7 @@ min_level = LOG_LEVELS_MAP[args.min_level.upper()]
 
 package = args.package
 
-base_adb_command = ['adb']
+base_adb_command = ['adb.exe']
 if args.device_serial:
   base_adb_command.extend(['-s', args.device_serial])
 if args.use_device:
@@ -359,4 +359,4 @@ while adb.poll() is None:
     message = matcher.sub(replace, message)
 
   linebuf += indent_wrap(message)
-  print(linebuf.encode('utf-8'))
+  print(linebuf.encode('utf-8').decode())
